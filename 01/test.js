@@ -7,7 +7,8 @@ stream.on("data", (chunk) => {
     .split("\r\n\r\n")
     .map((list) => list.split("\r\n"))
     .map((list) => list.reduce((acc, curr) => acc + parseInt(curr), 0))
-    .sort((right, left) => left - right);
+    .sort((left,right) => left - right)
+    .reverse();
 
   console.log(`Most calories : ${caloriesSumList[0]}`);
   console.log(
